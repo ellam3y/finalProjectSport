@@ -155,9 +155,9 @@ export default function Collection() {
           </p>
           <div className="flex flex-col gap-3 text-sm text-gray-700">
             {[
-              { value: "Topwear", label: "Top wear" },
-              { value: "Bottomwear", label: "Bottom wear" },
-              { value: "Winterwear", label: "Winter wear" },
+              { value: "Sportswear", label: "Sportswear" },
+              { value: "Sports shoes", label: "Sports shoes" },
+              { value: "Sports equipment", label: "Sports equipment" },
             ].map((item) => (
               <label
                 key={item.value}
