@@ -116,11 +116,11 @@ export default function ProductItem({
       <div className="relative overflow-hidden rounded-lg aspect-[3/4] bg-gray-50 mb-4 shadow-sm group-hover:shadow-md transition-all">
         {/* Bestseller Badge */}
         {bestseller ? (
-          <span className="absolute top-3 left-3 bg-red-400 hover:scale-105 transition-transform  text-white text-xs font-medium px-2 py-1 rounded-full z-10 shadow-md">
+          <span className="absolute top-3 left-3 bg-orange-500 hover:scale-105 transition-transform  text-white text-xs font-medium px-2 py-1 rounded-full z-10 shadow-md">
             TopSeller
           </span>
         ) : (
-          <span className="absolute top-3 left-3 bg-black hover:scale-105 transition-transform  text-white text-xs font-medium px-2 py-1 rounded-full z-10 shadow-md">
+          <span className="absolute top-3 left-3 bg-blue-950 hover:scale-105 transition-transform  text-white text-xs font-medium px-2 py-1 rounded-full z-10 shadow-md">
             New
           </span>
         )}
