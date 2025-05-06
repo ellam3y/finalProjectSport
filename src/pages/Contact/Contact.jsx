@@ -22,7 +22,7 @@ export default function Contact() {
             54709 Willms Station <br /> Suite 350, Washington, USA
           </p>
           <p className="text-gray-500">
-            Tel: (20) 555-155351 <br /> Email: Admin@forever.com
+            Tel: (20) 1557401577 <br /> Email: Ellamaey@gmail.com
           </p>
           <p className="font-semibold text-xl text-gray-600">
             Careers at Forever

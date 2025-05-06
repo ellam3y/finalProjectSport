@@ -4,7 +4,7 @@ import { assets } from "../../../assets/frontend_assets/assets";
 export default function Banner() {
   return (
     <div className="flex flex-col sm:flex-row border border-gray-300 rounded-lg overflow-hidden">
-      {/* LeftSide */}
+      {/* LeftSide
       <div className="w-full sm:w-1/2 py-12 sm:py-0 flex items-center justify-center bg-gray-50">
         <div className="text-gray-800 sm:px-10 px-6 max-w-md">
           <div className="flex items-center gap-2 mb-4">
@@ -23,10 +23,10 @@ export default function Banner() {
             <span className="w-8 md:w-11 h-px bg-gray-800 group-hover:w-12 transition-all"></span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* RightSide */}
-      <div className="w-full sm:w-1/2">
+      <div className="w-full sm:w-full">
         <img
           className="w-full h-full object-cover"
           src={assets.hero_img}
