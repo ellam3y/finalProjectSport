@@ -26,13 +26,13 @@ const CustomerReviews = () => {
         backgroundColor: "#f9f9fc",
       }}
     >
-      <div style={{ padding: "30px" }}>
+      <div style={{ padding: "20px" }}>
         <h1
           style={{
             textAlign: "center",
-            marginBottom: "30px",
+            marginBottom: "20px",
             color: "#222",
-            fontSize: "2.5rem",
+            fontSize: "2rem",
             fontWeight: "bold",
           }}
         >
@@ -40,14 +40,15 @@ const CustomerReviews = () => {
         </h1>
         <Swiper
           modules={[Pagination]}
-          spaceBetween={30}
-          slidesPerView={3}
+          spaceBetween={20}
+          slidesPerView={1}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          style={{ padding: "20px" }}
+          pagination={{ clickable: true }}
+          style={{ padding: "10px" }}
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
         >
           {reviews.map((review, index) => (
@@ -55,34 +56,34 @@ const CustomerReviews = () => {
               <div
                 style={{
                   border: "1px solid #ccc",
-                  padding: "30px",
-                  borderRadius: "15px",
+                  padding: "20px",
+                  borderRadius: "10px",
                   backgroundColor: "#fff",
-                  boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                   display: "flex",
                   alignItems: "center",
-                  gap: "20px",
+                  gap: "15px",
                   flexDirection: "column",
                   textAlign: "center",
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  height: "250px",
+                  height: "200px",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "scale(1.05)";
+                  e.currentTarget.style.transform = "scale(1.03)";
                   e.currentTarget.style.boxShadow =
-                    "0 8px 16px rgba(0, 0, 0, 0.2)";
+                    "0 6px 12px rgba(0, 0, 0, 0.15)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "scale(1)";
                   e.currentTarget.style.boxShadow =
-                    "0 6px 12px rgba(0, 0, 0, 0.1)";
+                    "0 4px 8px rgba(0, 0, 0, 0.1)";
                 }}
               >
-                <FaStar style={{ color: "#FFD700", fontSize: "32px" }} />
-                <p style={{ margin: 0, fontSize: "1.2rem", color: "#444" }}>
+                <FaStar style={{ color: "#FFD700", fontSize: "28px" }} />
+                <p style={{ margin: 0, fontSize: "1rem", color: "#444" }}>
                   {review}
                 </p>
-                <p style={{ margin: 0, fontSize: "1rem", color: "#888" }}>
+                <p style={{ margin: 0, fontSize: "0.9rem", color: "#888" }}>
                   {index % 2 === 0
                     ? "Excellent service and fast delivery!"
                     : "Great quality products and amazing experience!"}

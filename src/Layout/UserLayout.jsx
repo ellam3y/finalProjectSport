@@ -21,29 +21,30 @@ export default function UserLayout() {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      <SearchBar />
-      <Outlet />
-      <Footer />
+    <div style={{ position: "relative" }}>
       {showScrollButton && (
         <button
           style={{
             position: "fixed",
             bottom: "20px",
-            right: "20px",
+            right: "5px",
             padding: "10px 15px",
             backgroundColor: "#007bff",
             color: "#fff",
             border: "none",
             borderRadius: "5px",
             cursor: "pointer",
+            zIndex: 1000,
           }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           ↑
         </button>
       )}
+      <NavBar />
+      <SearchBar />
+      <Outlet />
+      <Footer />
     </div>
   );
 }

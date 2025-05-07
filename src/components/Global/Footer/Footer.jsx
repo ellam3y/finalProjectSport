@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="flex justify-around items-center gap-5 my-5">
           <img className="w-50 h-20" src={assets.logo} alt="Logo" />
           <p className="py-5 text-sm text-center">
-            Copyright © 2025 Forever You. All rights reserved. Design by{" "}
+            CopyRight © 2025 All R ights reserved. Design by{" "}
             <span className="font-medium text-gray-600">Ellam3y</span>
           </p>
         </div>
