@@ -61,12 +61,12 @@ export default function NavBar() {
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         {links.map((link, index) => (
           <NavLink
-            to={link.url}
+            to={link?.url || "#"}
             key={index}
-            className="flex flex-col items-center gap-1"
+            className="group flex flex-col items-center gap-1 hover:text-gray-500 transition-colors duration-300"
           >
-            <p>{link.name}</p>
-            <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+            <p>{link?.name || "Unnamed Link"}</p>
+            <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden group-hover:block" />
           </NavLink>
         ))}
       </ul>
@@ -75,40 +75,44 @@ export default function NavBar() {
       <div className="flex items-center gap-5">
         <img
           src={assets.search_icon}
-          className="w-4 cursor-pointer"
+          className="w-4 cursor-pointer hover:opacity-80 transition-opacity duration-300"
           onClick={openSearch}
           alt=""
         />
-        <div className="group relative">
+        <div className="group relative hidden sm:block">
           {isAuthenticated ? (
             <div className="cursor-pointer relative">
-              <img src={assets.profile_icon} alt="" className="w-4  " />
+              <img
+                src={assets.profile_icon}
+                alt=""
+                className="w-4 hover:opacity-80 transition-opacity duration-300"
+              />
               <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-20 transition-all duration-300 ease-in-out">
                 <div className="flex flex-col gap-2 w-48 py-3 px-5 bg-slate-100 text-gray-400 rounded shadow-md">
                   <p className="font-medium text-black mb-1">
                     Hello, {currentUser?.name}
                   </p>
                   <p
-                    className="cursor-pointer hover:text-black"
+                    className="cursor-pointer hover:text-gray-500"
                     onClick={() => navigate("/profile")}
                   >
                     My Profile
                   </p>
                   <p
-                    className="cursor-pointer hover:text-black"
+                    className="cursor-pointer hover:text-gray-500"
                     onClick={() => navigate("/wishlist")}
                   >
                     My Wishlist
                   </p>
                   <p
-                    className="cursor-pointer hover:text-black"
+                    className="cursor-pointer hover:text-gray-500"
                     onClick={navigateToOrders}
                   >
                     My Orders
                   </p>
                   {isAdmin() && (
                     <p
-                      className="cursor-pointer hover:text-black"
+                      className="cursor-pointer hover:text-gray-500"
                       onClick={() => navigate("/admin")}
                     >
                       Admin Dashboard
@@ -116,7 +120,7 @@ export default function NavBar() {
                   )}
                   <hr className="my-1 border-gray-300" />
                   <p
-                    className="cursor-pointer hover:text-black"
+                    className="cursor-pointer hover:text-gray-500"
                     onClick={handleLogout}
                   >
                     Logout
@@ -129,7 +133,7 @@ export default function NavBar() {
               <img
                 src={assets.profile_icon}
                 alt=""
-                className="w-4 cursor-pointer"
+                className="w-4 cursor-pointer hover:opacity-80 transition-opacity duration-300"
               />
             </Link>
           )}
@@ -137,7 +141,10 @@ export default function NavBar() {
 
         {/* Wishlist icon - visible when authenticated */}
         {isAuthenticated ? (
-          <div onClick={navigateToWishlist} className="relative cursor-pointer">
+          <div
+            onClick={navigateToWishlist}
+            className="relative cursor-pointer hover:text-gray-500 transition-colors duration-300"
+          >
             <FaRegHeart />
             {currentUser?.wishlist?.length > 0 && (
               <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
@@ -146,14 +153,20 @@ export default function NavBar() {
             )}
           </div>
         ) : (
-          <div onClick={navigateToWishlist} className="relative cursor-pointer">
+          <div
+            onClick={navigateToWishlist}
+            className="relative cursor-pointer hover:text-gray-500 transition-colors duration-300"
+          >
             <FaRegHeart />
           </div>
         )}
 
         {/* Cart icon - visible when authenticated */}
         {isAuthenticated && (
-          <Link to="cart" className="relative">
+          <Link
+            to="cart"
+            className="relative hover:opacity-80 transition-opacity duration-300"
+          >
             <img
               src={assets.cart_icon}
               className="w-5 min-w-5 cursor-pointer"
@@ -169,7 +182,7 @@ export default function NavBar() {
         <img
           onClick={openSideHeader}
           src={assets.menu_icon}
-          className="w-5 cursor-pointer sm:hidden"
+          className="w-5 cursor-pointer sm:hidden hover:opacity-80 transition-opacity duration-300"
           alt=""
         />
       </div>

@@ -50,7 +50,7 @@ export default function PlaceOrders() {
       const lastName = nameParts.slice(1).join(" ") || "";
       const email = currentUser.email || "";
       const phone = currentUser.phone || "";
-  
+
       if (
         formData.firstName !== firstName ||
         formData.lastName !== lastName ||
@@ -72,10 +72,10 @@ export default function PlaceOrders() {
         setFormData(preFilledData);
       }
     }
-  }, [currentUser, isAuthenticated]); 
+  }, [currentUser, isAuthenticated]);
 
   return (
-    <>
+    <div className="container mx-auto py-10 px-4">
       <Formik
         initialValues={formData}
         enableReinitialize
@@ -83,36 +83,34 @@ export default function PlaceOrders() {
         onSubmit={onSubmitOrder}
       >
         {({ isSubmitting }) => (
-          <Form className="flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t border-gray-300">
+          <Form className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-lg shadow-lg">
             {/* ------------------------- Left Side ------------------------ */}
-            <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
-              <div className="text-xl sm:text-2xl my-3">
-                <Title text1={"DELIVERY"} text2={"INFORMATION"} />
-              </div>
+            <div className="flex flex-col gap-4 bg-white p-4 rounded-lg shadow-sm">
+              <Title text1="Delivery" text2="Information" className="mb-4" />
 
-              <div className="flex gap-3">
-                <div className="w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                   <Field
                     name="firstName"
                     placeholder="First Name"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="firstName"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
-                <div className="w-full">
+                <div>
                   <Field
                     name="lastName"
                     placeholder="Last Name"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="lastName"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
               </div>
@@ -121,75 +119,75 @@ export default function PlaceOrders() {
                 name="email"
                 placeholder="Email Address"
                 type="email"
-                className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
               />
               <ErrorMessage
                 name="email"
                 component="p"
-                className="error text-red-500 text-xs mt-1"
+                className="error text-red-500 text-sm mt-1"
               />
 
               <Field
                 name="street"
                 placeholder="Street"
-                className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
               />
               <ErrorMessage
                 name="street"
                 component="p"
-                className="error text-red-500 text-xs mt-1"
+                className="error text-red-500 text-sm mt-1"
               />
 
-              <div className="flex gap-3">
-                <div className="w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                   <Field
                     name="city"
                     placeholder="City"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="city"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
-                <div className="w-full">
+                <div>
                   <Field
                     name="state"
                     placeholder="State"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="state"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
               </div>
 
-              <div className="flex gap-3">
-                <div className="w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
                   <Field
                     name="zipCode"
                     placeholder="Zip Code"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="zipCode"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
-                <div className="w-full">
+                <div>
                   <Field
                     name="country"
                     placeholder="Country"
-                    className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                    className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
                   />
                   <ErrorMessage
                     name="country"
                     component="p"
-                    className="error text-red-500 text-xs mt-1"
+                    className="error text-red-500 text-sm mt-1"
                   />
                 </div>
               </div>
@@ -197,29 +195,27 @@ export default function PlaceOrders() {
               <Field
                 name="phone"
                 placeholder="Phone"
-                className="input border border-gray-300 rounded py-1.5 px-3.5 w-full"
+                className="input border border-gray-300 rounded-lg py-2 px-3 w-full focus:ring-2 focus:ring-blue-500"
               />
               <ErrorMessage
                 name="phone"
                 component="p"
-                className="error text-red-500 text-xs mt-1"
+                className="error text-red-500 text-sm mt-1"
               />
             </div>
 
             {/* ------------------------- Right Side ------------------------ */}
-            <div className="mt-8">
-              <div className="mt-8 min-w-70">
-                <CartTotal />
-              </div>
-              <div className="mt-12">
-                <Title text1={"PAYMENT"} text2={"METHOD"} />
-                <div className="flex flex-col lg:flex-row gap-2">
+            <div className="flex flex-col gap-4 bg-white p-4 rounded-lg shadow-sm">
+              <CartTotal />
+              <div>
+                <Title text1="Payment" text2="Method" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                   {[
                     {
                       id: "Stripe",
                       label: (
                         <img
-                          className="h-5 mx-4"
+                          className="h-8 mx-auto"
                           src={assets.stripe_logo}
                           alt="Stripe"
                         />
@@ -229,7 +225,7 @@ export default function PlaceOrders() {
                       id: "Razorpay",
                       label: (
                         <img
-                          className="h-5 mx-4"
+                          className="h-8 mx-auto"
                           src={assets.razorpay_logo}
                           alt="Razorpay"
                         />
@@ -238,8 +234,8 @@ export default function PlaceOrders() {
                     {
                       id: "cod",
                       label: (
-                        <p className="text-gray-500 text-sm font-medium mx-4">
-                          CASH ON DELIVERY
+                        <p className="text-gray-600 text-sm font-medium text-center">
+                          Cash on Delivery
                         </p>
                       ),
                     },
@@ -247,31 +243,33 @@ export default function PlaceOrders() {
                     <div
                       key={id}
                       onClick={() => setMethod(id)}
-                      className="flex items-center gap-3 border border-gray-200 p-2 px-3 cursor-pointer"
+                      className={`flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg cursor-pointer ${
+                        method === id ? "bg-green-100 border-green-400" : ""
+                      }`}
                     >
-                      <p
-                        className={`min-w-3.5 h-3.5 border border-gray-200 rounded-full ${
-                          method === id ? "bg-green-400" : ""
-                        } `}
-                      ></p>
+                      <div
+                        className={`w-4 h-4 border border-gray-300 rounded-full ${
+                          method === id ? "bg-green-500" : ""
+                        }`}
+                      ></div>
                       {label}
                     </div>
                   ))}
                 </div>
+              </div>
 
-                <div className="w-full text-end mt-8">
-                  <button
-                    type="submit"
-                    className="bg-black text-white px-16 py-3 text-sm hover:bg-gray-800 transition-colors"
-                  >
-                    {isSubmitting ? "PROCESSING..." : "PLACE ORDER"}
-                  </button>
-                </div>
+              <div className="w-full text-end mt-6">
+                <button
+                  type="submit"
+                  className="bg-blue-600 text-white px-12 py-2 text-sm rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  {isSubmitting ? "Processing..." : "Place Order"}
+                </button>
               </div>
             </div>
           </Form>
         )}
       </Formik>
-    </>
+    </div>
   );
 }

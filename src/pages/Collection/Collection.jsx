@@ -97,82 +97,78 @@ export default function Collection() {
     sortProducts();
   }, [sortType]);
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t border-gray-300">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-12 pt-8 border-t border-gray-300 bg-gray-50">
       {/* Filter Option */}
-      <div className="min-w-60">
+      <div className="min-w-60 bg-white p-4 rounded-lg shadow-md">
         <p
           onClick={() => setShowFilters(!showFilters)}
-          className="uppercase my-2 text-xl flex items-center cursor-pointer gap-2"
+          className="uppercase my-2 text-lg flex items-center cursor-pointer gap-2 font-semibold text-gray-800"
         >
-          filters
+          Filters
           <img
-            className={`h-3 sm:hidden ${showFilters ? "rotate-90" : ""}`}
+            className={`h-4 sm:hidden transform ${
+              showFilters ? "rotate-90" : ""
+            } transition-transform duration-300`}
             src={assets.dropdown_icon}
-            alt=""
+            alt="Toggle Filters"
           />
         </p>
-
         {/* Category Filter */}
         <div
-          className={`border border-gray-200 rounded-lg shadow-sm px-5 py-4 my-5 bg-white ${
+          className={`border border-gray-200 rounded-lg px-4 py-3 my-4 bg-white ${
             showFilters ? "" : "hidden"
           } sm:block transition-all duration-300`}
         >
-          <p className="uppercase mb-4 text-sm font-medium tracking-wider border-b border-gray-100 pb-2">
-            CATEGORIES
+          <p className="uppercase mb-3 text-sm font-medium tracking-wide border-b border-gray-100 pb-2 text-indigo-700">
+            Categories
           </p>
-          <div className="flex flex-col gap-3 text-sm text-gray-700">
+          <div className="flex flex-col gap-2 text-sm text-gray-700">
             {["Men", "Women", "Kids"].map((item) => (
               <label
                 key={item}
-                className="flex items-center gap-3 cursor-pointer group"
+                className="flex items-center gap-2 cursor-pointer group hover:bg-gray-100 p-2 rounded-lg transition-all duration-200"
               >
-                <div className="relative flex items-center justify-center">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
-                    onChange={toggleCategory}
-                    value={item}
-                    checked={category.includes(item)}
-                  />
-                </div>
-                <span className="group-hover:text-indigo-600 transition-colors duration-200">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+                  onChange={toggleCategory}
+                  value={item}
+                  checked={category.includes(item)}
+                />
+                <span className="group-hover:text-indigo-700 transition-colors duration-200">
                   {item}
                 </span>
               </label>
             ))}
           </div>
         </div>
-
-        {/* SubCategory Filter */}
+        {/* Sub Category Filter */}
         <div
-          className={`border border-gray-200 rounded-lg shadow-sm px-5 py-4 my-5 bg-white ${
+          className={`border border-gray-200 rounded-lg px-4 py-3 my-4 bg-white ${
             showFilters ? "" : "hidden"
           } sm:block transition-all duration-300`}
         >
-          <p className="uppercase mb-4 text-sm font-medium tracking-wider border-b border-gray-100 pb-2">
-            TYPE
+          <p className="uppercase mb-3 text-sm font-medium tracking-wide border-b border-gray-100 pb-2 text-indigo-700">
+            Type
           </p>
           <div className="flex flex-col gap-3 text-sm text-gray-700">
             {[
               { value: "Sportswear", label: "Sportswear" },
-              { value: "Sports shoes", label: "Sports shoes" },
+              { value: "Sports shoes", label: "Sports Shoes" },
               { value: "SportsEquipment", label: "Sports Equipment" },
             ].map((item) => (
               <label
                 key={item.value}
-                className="flex items-center gap-3 cursor-pointer group"
+                className="flex items-center gap-2 cursor-pointer group hover:bg-gray-100 p-2 rounded-lg transition-all duration-200"
               >
-                <div className="relative flex items-center justify-center">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
-                    onChange={toggleSubCategory}
-                    value={item.value}
-                    checked={subCategory.includes(item.value)}
-                  />
-                </div>
-                <span className="group-hover:text-indigo-600 transition-colors duration-200">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
+                  onChange={toggleSubCategory}
+                  value={item.value}
+                  checked={subCategory.includes(item.value)}
+                />
+                <span className="group-hover:text-indigo-700 transition-colors duration-200">
                   {item.label}
                 </span>
               </label>
@@ -182,15 +178,15 @@ export default function Collection() {
       </div>
 
       {/* Right Side */}
-      <div className="flex-1">
+      <div className="flex-1 bg-white p-4 rounded-lg shadow-md">
         {/* Title & Selector */}
-        <div className="flex flex-col md:flex-row justify-between text-base sm:text-2xl mb-4">
-          <Title text1={"All"} text2={"COLLECTIONS"} />
+        <div className="flex flex-col md:flex-row justify-between items-center text-base sm:text-lg mb-6">
+          <Title text1={"All"} text2={"Collections"} />
           {/* Product Sort */}
-          <div className="relative w-full max-w-xs">
+          <div className="relative w-full max-w-xs mt-4 md:mt-0">
             <select
               onChange={(e) => setSortType(e.target.value)}
-              className="block w-full appearance-none bg-white border  border-gray-300 rounded-lg py-2.5 pl-4 pr-10 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent transition-all duration-200 shadow-sm hover:border-gray-400"
+              className="block w-full appearance-none bg-white border border-gray-300 rounded-lg py-2 px-4 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 shadow-sm hover:border-gray-400"
             >
               <option value="Relevant">Sort by: Relevant</option>
               <option value="low-high">Sort by: Low To High</option>
@@ -205,7 +201,7 @@ export default function Collection() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-6 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6 ">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((item, index) => (
             <ProductItem
               key={index}

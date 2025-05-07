@@ -17,15 +17,13 @@ export default function Orders() {
     const payment =
       paymentMethodInfo[method?.toLowerCase()] || paymentMethodInfo["cod"];
     return (
-      <div className={`flex items-center ${payment.color}`}>
-        {/* {method?.toLowerCase() !== "cod" && (
-          <img
-            src={assets[`${method?.toLowerCase()}_logo`] || "/placeholder.svg"}
-            className="h-4 mr-1"
-            alt={payment.text}
-          />
-        )} */}
-        <span>{payment.text}</span>
+      <div className="flex items-center gap-2">
+        <div
+          className={`w-3 h-3 rounded-full ${payment.color} border border-gray-300`}
+        ></div>
+        <span className="text-sm font-medium text-gray-700">
+          {payment.text}
+        </span>
       </div>
     );
   };
