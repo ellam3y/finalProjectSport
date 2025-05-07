@@ -3,30 +3,21 @@ import { assets } from "../../../assets/frontend_assets/assets";
 
 export default function Banner() {
   return (
-    <div className="flex flex-col sm:flex-row border border-gray-300 rounded-lg overflow-hidden">
-      {/* LeftSide
-      <div className="w-full sm:w-1/2 py-12 sm:py-0 flex items-center justify-center bg-gray-50">
-        <div className="text-gray-800 sm:px-10 px-6 max-w-md">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-8 md:w-11 h-0.5 bg-gray-800"></span>
-            <p className="font-medium text-sm md:text-base uppercase tracking-wider">
-              Our Bestsellers
-            </p>
-          </div>
-          <h1 className="prata-regular text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-            Latest Arrivals
-          </h1>
-          <div className="flex items-center gap-2 group cursor-pointer">
-            <p className="font-semibold text-sm md:text-base hover:text-gray-600 transition-colors">
-              Shop Now
-            </p>
-            <span className="w-8 md:w-11 h-px bg-gray-800 group-hover:w-12 transition-all"></span>
-          </div>
-        </div>
-      </div> */}
-
-      {/* RightSide */}
-      <div className="w-full sm:w-full">
+    <div className="flex flex-col sm:flex-row border border-gray-300 rounded-lg overflow-hidden bg-white shadow-lg">
+      {/* /* LeftSide */}
+      <div className="flex flex-col justify-center items-center p-6 sm:w-1/2 bg-gradient-to-r from-blue-500 to-blue-300 text-white">
+        <h1 className="text-3xl font-bold mb-4">Welcome to Our Store</h1>
+        <p className="text-lg mb-6">
+          Discover the latest arrivals and exclusive collections.
+        </p>
+        <button
+          className="px-6 py-2 bg-white text-blue-500 font-semibold rounded-lg shadow-md hover:bg-gray-100"
+          onClick={() => (window.location.href = "/collection")}
+        >
+          Shop Now
+        </button>
+      </div>
+      <div className="w-full sm:w-1/2">
         <img
           className="w-full h-full object-cover"
           src={assets.hero_img}

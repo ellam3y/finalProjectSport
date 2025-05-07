@@ -157,7 +157,7 @@ export default function Collection() {
             {[
               { value: "Sportswear", label: "Sportswear" },
               { value: "Sports shoes", label: "Sports shoes" },
-              { value: "Sports equipment", label: "Sports equipment" },
+              { value: "SportsEquipment", label: "Sports Equipment" },
             ].map((item) => (
               <label
                 key={item.value}
