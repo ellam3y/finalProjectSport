@@ -9,7 +9,7 @@ export default function Collection() {
   const [showFilters, setShowFilters] = useState(true);
   const [category, setCategory] = useState([]);
   const { products } = useProducts();
-  const { search, openSearch, setSearch, closeSearch } = useSearchStore();
+  const { search, openSearch } = useSearchStore();
   const [filterProducts, setFilterProducts] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("Relevant");
@@ -55,7 +55,7 @@ export default function Collection() {
   };
 
   //Logic for Sorting
-  const sortProducts = (e) => {
+  const sortProducts = () => {
     let filterProductCopy = filterProducts.slice();
     switch (sortType) {
       case "low-high":
@@ -153,9 +153,9 @@ export default function Collection() {
           </p>
           <div className="flex flex-col gap-3 text-sm text-gray-700">
             {[
-              { value: "Sportswear", label: "Sportswear" },
-              { value: "Sports shoes", label: "Sports Shoes" },
-              { value: "SportsEquipment", label: "Sports Equipment" },
+              { value: "Topwear", label: "Topwear" },
+              { value: "Bottomwear", label: "Bottomwear" },
+              { value: "Winterwear", label: "Winterwear" },
             ].map((item) => (
               <label
                 key={item.value}
