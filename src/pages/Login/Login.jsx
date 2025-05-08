@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { useAuthStore } from "../../store";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 export default function Login() {
   const [currentState, setCurrentState] = useState("Login");
   const { login, register, isAuthenticated, isAdmin } = useAuthStore();
@@ -152,16 +152,6 @@ export default function Login() {
             )}
           </div>
           <div className="w-full flex justify-between text-sm mt-[-8px]">
-            {currentState === "Login" && (
-              <button
-                type="button"
-                onClick={() => setCurrentState("Admin")}
-                className="bg-black text-white font-light px-8 py-2 mt-4"
-              >
-                Admin Login
-              </button>
-            )}
-
             <button
               type="submit"
               disabled={isSubmitting}

@@ -35,5 +35,5 @@ export const useSearchStore = create((set) => ({
 
   setSearch: (value) => set({ search: value }),
   openSearch: () => set({ showSearch: true }),
-  closeSearch: () => set({ showSearch: false , search: ""  }),
+  closeSearch: () => set({ showSearch: false, search: "" }),
 }));

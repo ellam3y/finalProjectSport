@@ -13,9 +13,9 @@ const initialUsers = [
   },
   {
     id: "admin1",
-    name: "Logentery Admin",
-    email: "admin@example.com",
-    phone: "987654321",
+    name: "Ellamaey",
+    email: "Ellamaey@gmail.com",
+    phone: "01557401577",
     password: "admin123",
     role: "admin",
     orders: [],
@@ -75,7 +75,7 @@ export const useAuthStore = create((set, get) => ({
       name,
       phone,
       password,
-      role: "user", 
+      role: "user",
       orders: [],
       wishlist: [],
     };

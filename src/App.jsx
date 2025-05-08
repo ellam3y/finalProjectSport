@@ -49,14 +49,10 @@ export default function App() {
               <h1 className="text-center text-2xl my-20">Page Not Found</h1>
             }
           />
-          {/* AdminRoute */}
-          {/* <Route path="/admin" element={<h1>Admin</h1>}></Route> */}
         </Route>
 
         {/* RegisterRoute */}
         <Route path="/register" element={<Login />} />
-        {/* AdminRoute */}
-        <Route path="/admin" element={<h1>Admin</h1>}></Route>
       </Routes>
     </div>
   );

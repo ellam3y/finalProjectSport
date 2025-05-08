@@ -20,7 +20,7 @@ export default function NavBar() {
   const { openSearch } = useSearchStore();
   const { getCartCount } = useCartStore();
   const { products } = useProducts();
-  const { isAuthenticated, currentUser, logout, isAdmin } = useAuthStore();
+  const { isAuthenticated, currentUser, logout } = useAuthStore();
   const navigate = useNavigate();
 
   // Update links when auth state changes
@@ -111,14 +111,7 @@ export default function NavBar() {
                   >
                     My Orders
                   </p>
-                  {isAdmin() && (
-                    <p
-                      className="cursor-pointer hover:text-blue-900"
-                      onClick={() => navigate("/admin")}
-                    >
-                      Admin Dashboard
-                    </p>
-                  )}
+
                   <hr className="my-1 border-gray-300" />
                   <p
                     className="cursor-pointer hover:text-blue-950"
