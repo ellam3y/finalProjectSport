@@ -1,5 +1,6 @@
 import React from "react";
 import { assets } from "../../../assets/frontend_assets/assets";
+import { Link } from "react-router-dom";
 
 export default function Banner() {
   return (
@@ -10,12 +11,12 @@ export default function Banner() {
         <p className="text-lg mb-6">
           Discover the latest arrivals and exclusive collections.
         </p>
-        <button
+        <Link
+          to="/collection"
           className="px-6 py-2 bg-white text-blue-500 font-semibold rounded-lg shadow-md hover:bg-gray-100"
-          onClick={() => (window.location.href = "/collection")}
         >
           Shop Now
-        </button>
+        </Link>
       </div>
       <div className="w-full sm:w-1/2">
         <img
