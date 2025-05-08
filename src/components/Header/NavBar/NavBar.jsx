@@ -65,7 +65,7 @@ export default function NavBar() {
             key={index}
             className="group flex flex-col items-center gap-1 px-2 py-1 transition-all duration-300"
           >
-            <p className="group-hover:text-blue-900">
+            <p className="group-hover:text-blue-950">
               {link?.name || "Unnamed Link"}
             </p>
             <hr className="w-2/4 border-none h-[1.5px] bg-blue-600 hidden group-hover:block" />
@@ -76,7 +76,7 @@ export default function NavBar() {
       <div className="flex items-center gap-5">
         <img
           src={assets.search_icon}
-          className="w-4 cursor-pointer hover:opacity-70 hover:text-blue-900 transition-opacity duration-300"
+          className="w-4 cursor-pointer hover:opacity-70 hover:text-blue-950 transition-opacity duration-300"
           onClick={openSearch}
           alt=""
         />
@@ -86,7 +86,7 @@ export default function NavBar() {
               <img
                 src={assets.profile_icon}
                 alt=""
-                className="w-4 hover:opacity-70 hover:text-blue-900 transition-opacity duration-300"
+                className="w-4 hover:opacity-70 hover:text-blue-950 transition-opacity duration-300"
               />
               <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-20 transition-all duration-300 ease-in-out">
                 <div className="flex flex-col gap-2 w-48 py-3 px-5 bg-blue-50 text-gray-700 rounded shadow-md">
@@ -94,19 +94,19 @@ export default function NavBar() {
                     Hello, {currentUser?.name}
                   </p>
                   <p
-                    className="cursor-pointer hover:text-blue-900"
+                    className="cursor-pointer hover:text-blue-950"
                     onClick={() => navigate("/profile")}
                   >
                     My Profile
                   </p>
                   <p
-                    className="cursor-pointer hover:text-blue-900"
+                    className="cursor-pointer hover:text-blue-950"
                     onClick={() => navigate("/wishlist")}
                   >
                     My Wishlist
                   </p>
                   <p
-                    className="cursor-pointer hover:text-blue-900"
+                    className="cursor-pointer hover:text-blue-950"
                     onClick={navigateToOrders}
                   >
                     My Orders
@@ -121,7 +121,7 @@ export default function NavBar() {
                   )}
                   <hr className="my-1 border-gray-300" />
                   <p
-                    className="cursor-pointer hover:text-blue-900"
+                    className="cursor-pointer hover:text-blue-950"
                     onClick={handleLogout}
                   >
                     Logout
@@ -134,7 +134,7 @@ export default function NavBar() {
               <img
                 src={assets.profile_icon}
                 alt=""
-                className="w-4 cursor-pointer hover:opacity-70 hover:text-blue-900 transition-opacity duration-300"
+                className="w-4 cursor-pointer hover:opacity-70 hover:text-blue-950 transition-opacity duration-300"
               />
             </Link>
           )}
